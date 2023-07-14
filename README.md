@@ -104,6 +104,7 @@ The results of the conducted LDA topic modeling can be found below. In the pictu
  (9,
   '0.007*"canadians" + 0.006*"harper" + 0.005*"quebec" + 0.005*"ontario" + 0.005*"bell"')]
   ```
+![map](link)
 
 ![map](link)
 
@@ -125,11 +126,11 @@ UMAP is known for its scalability and computational efficiency, making it suitab
 
 We decided for the following parameters: n_neighbors=15, n_components=5. The common default value for number neighbors is 15. A relatively large value for the number of neighbors gives more of the big picture and less of the details. That's what we were looking for to limit the amount of topics generated and not get single reddit topics.
 
-### Clustering
+    ### Clustering
 
 The reduced embeddings are clustered using HDBSCAN. It is an extension of DBSCAN that finds clusters of varying densities by converting DBSCAN into a hierarchical clustering algorithm. In high dimensional data distance clustering algorithms are disadvantageous. We decided on a minimum cluster size of 20. The idea was to not allow single reddits influence/create topics by their own and create more general bigger topics. One could adjust these parameters but needs to be aware that the topics might be very specific and not representative.
 
-### Weighing
+    ### Weighing
 
 A modified TF-IDF score is calculated, such that it allows for a representation of a term’s importance to a topic instead. All documents in a cluster are treated as a single document by simply concatenating the documents. Then a c-TF-IDF score is calculated.
 
