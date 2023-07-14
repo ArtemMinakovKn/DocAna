@@ -147,12 +147,16 @@ The length of the bar represents the score of the keywords, the most "important"
 
 - Resume BERTopic
 
-One could further limit the words used for clustering by only using NE and nouns or by doing POS-Tagging using spacy. We tried it and decided to leave the topics in their raw form. Also removing all locations doesnt seem like the way to go. As one can observe for the topics in sweden, there's one cluster containing keywords like russia, nato & china. Removing those locations would be problematic for the cluster.
+One could further limit the words used for clustering by only using NE and nouns or by doing POS-Tagging using spacy. We tried it and decided to leave the topics in their raw form. Also removing all locations doesnt seem like the way to go. As one can observe for the topics in sweden, there's one cluster containing keywords like russia, nato & china. Removing those locations would be problematic for the cluster.  
 We encourage others to try out other approaches to yield more fine grained topics. Also we compared topics between countries manually due to the number of topics that were produced. For a bigger amount of topics this could be done using BERTopic.
 Overall we got some interesting insights into some topics for countries with a larger amount of reddits (e.g. canada) but unfortunately no supporting insights regarding sentiment analysis.
 
+![map](link)
+
 ## Outcome
 
-The findings reveal that Finland, Norway, and Germany exhibit the highest proportion of positive sentiment among the analyzed Reddit posts. Conversely, Israel, Canada, and Australia display the lowest share of positive sentiment. These variations in sentiment can be attributed to the specific topics or issues discussed by Reddit users in each country. The prevalence of certain problem-oriented topics appears to influence the overall sentiment scores observed.
-Furthermore, it is important to acknowledge that the performance of the employed sentiment analysis model, 'nlptown/bert-base-multilingual-uncased-sentiment', may vary across different languages. This discrepancy stems from the inherent differences in nuances, grammar, and sentiment expressions across languages, which can impede the model's ability to accurately capture and interpret sentiment uniformly across all languages.
+The findings reveal that Finland, Norway, and Germany exhibit the highest proportion of positive sentiment among the analyzed Reddit posts. Conversely, Israel, Canada, and Australia display the lowest share of positive sentiment. These variations in sentiment can be attributed to the specific topics or issues discussed by Reddit users in each country. The prevalence of certain problem-oriented topics appears to influence the overall sentiment scores observed.  
+Furthermore, it is important to acknowledge that the performance of the employed sentiment analysis model, 'nlptown/bert-base-multilingual-uncased-sentiment', may vary across different languages. This discrepancy stems from the inherent differences in nuances, grammar, and sentiment expressions across languages, which can impede the model's ability to accurately capture and interpret sentiment uniformly across all languages.  
 Comparing these results with the Happiest countries research findings, it becomes evident that Finland and other North European countries consistently occupy top positions in both ratings. This observation suggests that these countries tend to exhibit higher overall sentiment scores compared to other countries under analysis.
+
+![map](link)
