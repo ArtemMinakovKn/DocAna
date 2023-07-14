@@ -50,6 +50,10 @@ After downloading the data the following countries subreddits (according to the 
 
 Several countries from the top-20 list were skipped because of the lack of the appropriate amount of text in subreddits (less than 150 reddit posts in Luxembourg, Netherlands, Malta, Costa Rica) and Iceland was excluded later because of the impossibility to properly translate the texts into English.
 
+The chart below represent the 30 most frequently used words across all country Reddits.
+
+![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/30freq_words.jpg)
+
 ## Comparison of manual sentiment vs VADER vs BERT
 To determine the best sentiment analysis library, it was decided to manually examine a certain number of Reddit posts (around 50), where two models showed completely opposite results. Overall, the advantage of BERT is undeniable. Here's an example of a Reddit post where VADER gave a highly positive rating while BERT gave a highly negative rating:
 “I got up on the first day of the school holidays to find my kitchen floor coated in sugar, uneaten cornflakes on the bench (because they cocked up and put salt on them first) and my 5 and 7 year olds drinking straight sugar from their bunny cups. Thank God I could flick them to their grandmother yesterday while I worked, I may have throttled the pair of them.”
@@ -107,7 +111,6 @@ The results of the conducted LDA topic modeling can be found below. In the pictu
  (9,
   '0.007*"canadians" + 0.006*"harper" + 0.005*"quebec" + 0.005*"ontario" + 0.005*"bell"')]
   ```
-![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/30freq_words.jpg)
 
 ![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/LDA_heatmap.jpg)
 
