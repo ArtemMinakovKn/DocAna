@@ -104,7 +104,7 @@ The results of the conducted LDA topic modeling can be found below. In the pictu
  (9,
   '0.007*"canadians" + 0.006*"harper" + 0.005*"quebec" + 0.005*"ontario" + 0.005*"bell"')]
   ```
-![map](link)
+![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/30freq_words.jpg)
 
 ![map](link)
 
