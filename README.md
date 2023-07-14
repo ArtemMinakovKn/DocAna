@@ -1,6 +1,7 @@
 # Are the happiness polls saying the truth?
 
 ***Authots:*** *Artem Minakov, Linus Krause, Elena Putilova, Diana Sharafeeva*
+*Team: Konstanz Lovers*
 
 ## Project goals 
 
