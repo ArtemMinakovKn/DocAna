@@ -152,7 +152,7 @@ The amount of reddits that were available influenced the diversity of topics. Le
 - Topic keywords
 The length of the bar represents the score of the keywords, the most "important"/representative words (c-tf-idf score). A longer bar means higher importance for the topic.
 
-![map]((https://github.com/ArtemMinakovKn/DocAna/blob/main/topics_sweden.png)
+![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/topics_sweden.png)
 
 
 - Resume BERTopic
