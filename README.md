@@ -111,6 +111,7 @@ The results of the conducted LDA topic modeling can be found below. In the pictu
  (9,
   '0.007*"canadians" + 0.006*"harper" + 0.005*"quebec" + 0.005*"ontario" + 0.005*"bell"')]
   ```
+![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/LDA_topics.jpg)
 
 ![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/LDA_heatmap.jpg)
 
@@ -159,10 +160,6 @@ The length of the bar represents the score of the keywords, the most "important"
 One could further limit the words used for clustering by only using NE and nouns or by doing POS-Tagging using spacy. We tried it and decided to leave the topics in their raw form. Also removing all locations doesnt seem like the way to go. As one can observe for the topics in sweden, there's one cluster containing keywords like russia, nato & china. Removing those locations would be problematic for the cluster.  
 We encourage others to try out other approaches to yield more fine grained topics. Also we compared topics between countries manually due to the number of topics that were produced. For a bigger amount of topics this could be done using BERTopic.
 Overall we got some interesting insights into some topics for countries with a larger amount of reddits (e.g. canada) but unfortunately no supporting insights regarding sentiment analysis.
-
-![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/LDA_topics.jpg)
-
-![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/LDA_topics.jpg)
 
 ## Outcome
 
