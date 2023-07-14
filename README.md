@@ -1,13 +1,13 @@
 # Are the happiness polls saying the truth?
 
-***Authots:*** *Artem Minakov, Linus Krause, Elena Putilova, Diana Sharafeeva*. 
+***Authots:*** *Artem Minakov, Linus Krause, Elena Putilova, Diana Sharafeeva*
 *Team: Konstanz Lovers*
 
 ## Project goals 
 
 The primary objective of the project was to investigate whether the countries identified as the "happiest in the world" also exhibited a higher level of positive sentiment within their respective Reddit communities. Specifically, the focus was placed on analyzing the subreddits associated with the 20 top-ranked countries as identified in the [2023 World Happiness Report](https://worldpopulationreview.com/country-rankings/happiest-countries-in-the-world). In the project applied the techniques learned during the course "Document Analysis with Computational Methods" at Konstanz Universitat.
 
-![map](link)
+![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/happiness_countries.jpg)
 
 The project involved the following steps:
 - Subreddit Extraction: The subreddits corresponding to the 20 countries listed in the happiness report were extracted. Subreddits with a minimum of 100 Reddit posts were retained for analysis.  
@@ -75,6 +75,8 @@ This model has been specifically fine-tuned for sentiment analysis on product re
 Due to the model's token limitation of 512, a text processing methodology described in a relevant [article](https://towardsdatascience.com/how-to-apply-transformers-to-any-length-of-text-a5601410af7f) was adopted. Specifically, the text of each Reddit post was segmented into chunks of 512 tokens. These segments were subsequently transformed into individual tensors and incorporated into the input dictionary for the BERT model. The final sentiment score, representing the mean value of all text segments, was then derived from the model's predictions.
 To enable cross-country sentiment comparison, the overall sentiment score for each country was calculated as the average sentiment value across all Reddit posts originating from that specific country. This calculation provided a comprehensive assessment of sentiment variation among the countries under consideration.
 
+![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/sent_score_countries.jpg)
+
 ## Topic modelling 
 As the next step of the analysis we wanted to apply topic modeling to subreddits of different countries and find out what are the most popular themes for discussion in each country. Ideally, the plan was to extract the meaningful topic labels and the keywords that would make it possible to explain the difference in how positive or negative the reddits from the countries are. To do so, we used two approaches: LDA (as the most widely used and simple one) and BERTopic.
 
@@ -107,7 +109,7 @@ The results of the conducted LDA topic modeling can be found below. In the pictu
   ```
 ![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/30freq_words.jpg)
 
-![map](link)
+![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/LDA_heatmap.jpg)
 
 Since the LDA method did not lead us to the results we expected, we decided to continue our analysis further and moved to the BERTopic module.
 
@@ -146,13 +148,18 @@ The amount of reddits that were available influenced the diversity of topics. Le
 - Topic keywords
 The length of the bar represents the score of the keywords, the most "important"/representative words (c-tf-idf score). A longer bar means higher importance for the topic.
 
+![map]((https://github.com/ArtemMinakovKn/DocAna/blob/main/topics_sweden.png)
+
+
 - Resume BERTopic
 
 One could further limit the words used for clustering by only using NE and nouns or by doing POS-Tagging using spacy. We tried it and decided to leave the topics in their raw form. Also removing all locations doesnt seem like the way to go. As one can observe for the topics in sweden, there's one cluster containing keywords like russia, nato & china. Removing those locations would be problematic for the cluster.  
 We encourage others to try out other approaches to yield more fine grained topics. Also we compared topics between countries manually due to the number of topics that were produced. For a bigger amount of topics this could be done using BERTopic.
 Overall we got some interesting insights into some topics for countries with a larger amount of reddits (e.g. canada) but unfortunately no supporting insights regarding sentiment analysis.
 
-![map](link)
+![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/LDA_topics.jpg)
+
+![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/LDA_topics.jpg)
 
 ## Outcome
 
@@ -160,4 +167,4 @@ The findings reveal that Finland, Norway, and Germany exhibit the highest propor
 Furthermore, it is important to acknowledge that the performance of the employed sentiment analysis model, 'nlptown/bert-base-multilingual-uncased-sentiment', may vary across different languages. This discrepancy stems from the inherent differences in nuances, grammar, and sentiment expressions across languages, which can impede the model's ability to accurately capture and interpret sentiment uniformly across all languages.  
 Comparing these results with the Happiest countries research findings, it becomes evident that Finland and other North European countries consistently occupy top positions in both ratings. This observation suggests that these countries tend to exhibit higher overall sentiment scores compared to other countries under analysis.
 
-![map](link)
+![map](https://github.com/ArtemMinakovKn/DocAna/blob/main/sent_score.jpg)
