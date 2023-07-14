@@ -112,7 +112,7 @@ Since the LDA method did not lead us to the results we expected, we decided to c
 
 In the BERTopic framework we used Sentence-BERT (SBERT) to create document embeddings. We assume that documents containing the same topic are semantically similar. These embeddings are primarily used to cluster semantically similar documents and not directly used in generating the topics, this is done later on.
 
-### Dimension Reduction
+- Dimension Reduction
 
 We reduced embeddings using UMAP. UMAP has some advantages over e.g. PCA.
 Non-linear Dimension Reduction:
@@ -126,26 +126,26 @@ UMAP is known for its scalability and computational efficiency, making it suitab
 
 We decided for the following parameters: n_neighbors=15, n_components=5. The common default value for number neighbors is 15. A relatively large value for the number of neighbors gives more of the big picture and less of the details. That's what we were looking for to limit the amount of topics generated and not get single reddit topics.
 
-    ### Clustering
+- Clustering
 
 The reduced embeddings are clustered using HDBSCAN. It is an extension of DBSCAN that finds clusters of varying densities by converting DBSCAN into a hierarchical clustering algorithm. In high dimensional data distance clustering algorithms are disadvantageous. We decided on a minimum cluster size of 20. The idea was to not allow single reddits influence/create topics by their own and create more general bigger topics. One could adjust these parameters but needs to be aware that the topics might be very specific and not representative.
 
-    ### Weighing
+- Weighing
 
 A modified TF-IDF score is calculated, such that it allows for a representation of a term’s importance to a topic instead. All documents in a cluster are treated as a single document by simply concatenating the documents. Then a c-TF-IDF score is calculated.
 
-### Fine Tuning
+- Fine Tuning
 
 For fine tuning we applied stop word removal to create more meaningful topics. We do this after creating embeddings because the transformer-based embedding models that we use need the full context in order to create accurate embeddings.
 
-### Top 10 Topics
+- Top 10 Topics
 The amount of reddits that were available influenced the diversity of topics. Less reddits lead to less extracted topics and therefore the remaining topics account for more of the total.
 
 
-### Topic keywords
+- Topic keywords
 The length of the bar represents the score of the keywords, the most "important"/representative words (c-tf-idf score). A longer bar means higher importance for the topic.
 
-### Resume BERTopic
+- Resume BERTopic
 
 One could further limit the words used for clustering by only using NE and nouns or by doing POS-Tagging using spacy. We tried it and decided to leave the topics in their raw form. Also removing all locations doesnt seem like the way to go. As one can observe for the topics in sweden, there's one cluster containing keywords like russia, nato & china. Removing those locations would be problematic for the cluster.
 We encourage others to try out other approaches to yield more fine grained topics. Also we compared topics between countries manually due to the number of topics that were produced. For a bigger amount of topics this could be done using BERTopic.
